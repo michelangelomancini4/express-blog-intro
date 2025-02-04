@@ -10,6 +10,9 @@ const app = express()
 // impostazione porta
 const port = 3000
 
+  // configurazione asset statico
+  app.use(express.static('public'));
+
 // impostazione rotta principale
 app.get('/', (req, res) => {
 res.send('Server del mio blog')
@@ -20,10 +23,13 @@ app.get("/bacheca", (req, res) => {
     res.json(dolci);
   });
 
+
+
 // avvio server mettendolo in ascolto sulla porta indicata
 app.listen(port, () => {
 console.log(`Example app listening on port ${port}`)
 })
+
 
 
 // array con lista dolci
@@ -32,35 +38,35 @@ const dolci = [
       id: 1,
       titolo: "ciambellone",
       contenuto: "ciambellone al cioccolato",
-      immagine: "/images/post1.jpg",
+      immagine: "/images/post1.jpeg",
       tags: ["ciambellone", "cioccolata"],
     },
     {
       id: 2,
       titolo: "cracker barbabietola",
       contenuto: "cracker con impasto di barbabietola",
-      immagine: "/images/post2.jpg",
+      immagine: "/images/post2.jpeg",
       tags: ["cracker ", "barbabietola"],
     },
     {
       id: 3,
       titolo: "pane fritto dolce",
       contenuto: "pane fritto con zucchero",
-      immagine: "/images/post3.jpg",
+      immagine: "/images/post3.jpeg",
       tags: ["pane", "zucchero"],
     },
     {
       id: 4,
       titolo: "pasta barbabietola",
       contenuto: "pasta barbabietola e limone",
-      immagine: "/images/post4.jpg",
+      immagine: "/images/post4.jpeg",
       tags: ["pasta", "barbabietola"],
     },
     {
       id: 5,
       titolo: "torta paesana",
       contenuto: "torta ai mirtilli verdi",
-      immagine: "/images/post5.jpg",
+      immagine: "/images/post5.jpeg",
       tags: ["torta", "greenberry"],
     }
   ];
